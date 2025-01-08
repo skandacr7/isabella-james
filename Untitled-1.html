@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isabella James - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #FFE4E4;
+            position: relative;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        .background-circle-1 {
+            position: fixed;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background-color: #FFB6B6;
+            top: -200px;
+            left: -200px;
+            z-index: 0;
+        }
+
+        .background-circle-2 {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background-color: #B6E3E3;
+            bottom: -200px;
+            right: -200px;
+            z-index: 0;
+        }
+
+        .card {
+            background: white;
+            padding: clamp(20px, 5vw, 40px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            gap: clamp(20px, 4vw, 40px);
+            z-index: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: auto;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: clamp(200px, 30vw, 250px);
+            aspect-ratio: 1;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 40%;
+            object-fit: contain;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: absolute;
+            z-index: 2;
+        }
+
+        .profile-background {
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            background-color: #40E0D0;
+            border-radius: 37%;
+            z-index: 1;
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .greeting {
+            font-size: clamp(18px, 3vw, 24px);
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .name {
+            font-size: clamp(24px, 4vw, 36px);
+            color: #40E0D0;
+            font-weight: bold;
+            margin-bottom: 15px;
+            word-wrap: break-word;
+        }
+
+        .description {
+            color: #666;
+            font-size: clamp(14px, 2vw, 16px);
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+
+        .hire-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #FFE4E4;
+            color: #40E0D0;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .hire-button:hover {
+            background-color: #40E0D0;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Tablet Breakpoint */
+        @media (max-width: 768px) {
+            .card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-image-container {
+                width: min(280px, 70vw);
+                margin-bottom: 20px;
+            }
+
+            .content {
+                width: 100%;
+            }
+        }
+
+        /* Mobile Breakpoint */
+        @media (max-width: 480px) {
+            body {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .profile-image-container {
+                width: min(250px, 80vw);
+            }
+
+            .hire-button {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-circle-1"></div>
+    <div class="background-circle-2"></div>
+    <div class="card">
+        <div class="profile-image-container">
+            <img src="img1-removebg-preview.png" alt="Isabella James" class="profile-image">
+            <div class="profile-background"></div>
+        </div>
+        <div class="content">
+            <div class="greeting">Hi, I'm</div>
+            <h1 class="name">Isabella James</h1>
+            <p class="description">As a seasoned realtor with five years of invaluable experience, I am here to assist you in finding your dream home. Allow me to curate a selection of homes that perfectly match your unique preferences and requirements. Your ideal home is just a step away, and I am committed to making the process smooth and tailored to your needs.</p>
+            <a href="mailto:isabeljames004@gmail.com" class="hire-button"><b>Contact Me</b></a>
+        </div>
+    </div>
+</body>
+</html>
